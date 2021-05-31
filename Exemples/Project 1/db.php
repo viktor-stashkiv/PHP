@@ -15,7 +15,7 @@
 
     $PDO = null;
     // create table
-    /*try {
+    try {
       //$conn = new PDO("mysql:host=$servername;dbname=users", $username, $password);
    
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -34,10 +34,10 @@
       {
       echo $sql . "<br>" . $e->getMessage();
       }
-   */
+   
 
    // insert in table
-  /*try {
+  try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
    
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -56,10 +56,10 @@
     {
      echo $sql . "<br>" . $e->getMessage();
     }
-*/
+
 
 // декілька запитів
-/*try {
+try {
   // Почати транзакції
   $conn->beginTransaction();
   // Вставити записи
@@ -80,9 +80,9 @@ catch(PDOException $e)
   $conn->rollback();
   echo "Помилка: " . $e->getMessage();
   }
-*/
+
 // insert any data
-/*try{
+try{
   // Підготовка SQL та параметрів до прив'язки
   $stmt = $conn->prepare("INSERT INTO User (firstname, lastname, email)
   VALUES (:firstname, :lastname, :email)");
@@ -108,13 +108,13 @@ catch(PDOException $e)
   {
   echo "Помилка: " . $e->getMessage();
   }
-*/
-/* data output 
+
+// data output 
 foreach($conn->query('SELECT * FROM user') as $row) {
   echo $row['id'] . ' ' . $row['firstname'];
   print("<pre>");
   print_r($row);
   print("</pre>");
 }
-*/
+
 ?>
